@@ -5,10 +5,13 @@ public interface Contract {
     void examine(String item);
     void use(String item);
     boolean walk(String direction);
-    boolean fly(int x, int y);
+    // boolean fly(int x, int y);
     Number shrink();
     Number grow();
     void rest();
     void undo();
 
+    
+
 }
+
