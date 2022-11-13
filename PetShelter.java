@@ -79,17 +79,24 @@ public class PetShelter implements Contract {
         
     }
 
-    public boolean fly(int speed, int hour){
-        if (animalType == "Bird"){
-            System.out.println(name + " is flying !");
-            return true;
+    public boolean fly(int x, int y){
+        
+        String animal = animalType.toLowerCase();
+        //System.out.println(animal);
 
-        }
-        else{
+        if (animal == "bird" && y > 0 && x > 0) {
+            System.out.println(name + " is flying " + x + " meters to the front of the shelter");
+            return true;
+        } else if (animal == "bird" && y > 0 && x < 0) {
+            System.out.println(name + " is flying " + x + " meters to the back of the shelter");
+            return true;
+        } else if (animal == "bird" && y < 0) {
+            System.out.println(name + " cannot got below floor level.");
+            return false;
+        } else{
             System.out.println(name + " isn't a bird! " + animalType + "'s can't fly!");
             return false;
 
-            
         }
     }
     
@@ -137,7 +144,7 @@ public class PetShelter implements Contract {
     
 
 public static void main(String[]args){ //main for testing
-    PetShelter mPetShelter = new Pet("Tangbao", 1, "Cat", "Domestic Short Hair", "Good", 10);
+    PetShelter mPetShelter = new PetShelter("Tangbao", 1, "cat", "Domestic Short Hair", "Good", 10);
     System.out.println(mPetShelter);
     mPetShelter.grab("Tangbao");
     mPetShelter.use("cat tree");
