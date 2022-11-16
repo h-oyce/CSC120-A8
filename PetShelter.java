@@ -81,22 +81,21 @@ public class PetShelter implements Contract {
 
     public boolean fly(int x, int y){
         
-        String animal = animalType.toLowerCase();
+        String animal = this.animalType.toLowerCase();
         //System.out.println(animal);
 
-        if (animal == "bird" && y > 0 && x > 0) {
+        if (animal.equals ("bird") && y > 0 && x > 0) {
             System.out.println(name + " is flying " + x + " meters to the front of the shelter");
             return true;
-        } else if (animal == "bird" && y > 0 && x < 0) {
+        } else if (animal.equals ("bird") && y > 0 && x < 0) {
             System.out.println(name + " is flying " + x + " meters to the back of the shelter");
             return true;
-        } else if (animal == "bird" && y < 0) {
+        } else if (animal.equals ("bird") && y < 0) {
             System.out.println(name + " cannot got below floor level.");
             return false;
         } else{
-            System.out.println(name + " isn't a bird! " + animalType + "'s can't fly!");
+            System.out.println(name + " isn't a bird! " + animalType + "s can't fly!");
             return false;
-
         }
     }
     
