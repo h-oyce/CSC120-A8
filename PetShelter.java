@@ -147,11 +147,9 @@ public class PetShelter implements Contract {
     public void printRegistry() { // prints out the entire registry of pets available in the shelter
         Set<java.lang.String> keys = this.petsAvailable.keySet();
         for (String key : keys) {
-            if (this.petsAvailable.get(key) == true) {
-                System.out.print(key + ", ");
-            }
-            ;
+            System.out.print(key + ", ");
         }
+        ;
         System.out.print("are all availible for adoption!");
     }
 
